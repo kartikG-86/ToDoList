@@ -1,0 +1,18 @@
+{% from 'bootstrap5/form.html' import render_form %} {% block content %}
+{% include 'header.html' %}
+
+
+
+<div class="mx-5">
+    {% if user_exist: %}
+    <h3 class="text-danger">This user doesn't exist</h3>
+    {% elif wrong_info: %}
+    <h3 class="text-danger">Invalid Credentials</h3>
+    {% endif %}
+    <h1>Login Page</h1>
+<form action="/" method="post">
+{{ render_form(form) }}
+</form>
+    </div>
+{% include 'footer.html' %}
+{% endblock %}

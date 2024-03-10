@@ -1,0 +1,9 @@
+{% include 'header.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+<div class="mx-5 my-5">
+        <form action="/newnote" method="post">
+{{ render_form(form) }}
+</form>
+        </div>
+
+{% include 'footer.html' %}

@@ -1,0 +1,31 @@
+{% from 'bootstrap5/form.html' import render_form %} {% block content %}
+{% include 'header.html' %}
+
+
+
+<div class="mx-5">
+
+<!--    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--<a type="button" href="{{url_for('newnote')}}" class="btn btn-primary" >-->
+<!--  Add Note-->
+<!--</a>-->
+
+<!-- Modal -->
+
+
+
+<div class="row">
+ {% for item in notes: %}
+  <div class="col-sm-6 mb-3 mb-sm-0 my-5">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{item.note}}</h5>
+        <a href="{{url_for('deletenote',id=item.id)}}" class="btn btn-primary">Delete</a>
+      </div>
+    </div>
+  </div>
+ {% endfor %}
+</div>
+    </div>
+{% include 'footer.html' %}
+{% endblock %}

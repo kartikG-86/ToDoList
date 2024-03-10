@@ -1,0 +1,15 @@
+{% from 'bootstrap5/form.html' import render_form %} {% block content %}
+{% include 'header.html' %}
+
+{% if user_present: %}
+<h3 class="text-danger mx-5 my-5">This User already exist. Sign Up with another Email.</h3>
+{% endif %}
+
+<div class="mx-5">
+    <h1>Sign Up Page</h1>
+<form action="/signup" method="post">
+{{ render_form(form) }}
+</form>
+    </div>
+{% include 'footer.html' %}
+{% endblock %}
